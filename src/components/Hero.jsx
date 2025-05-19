@@ -1,7 +1,9 @@
 import React from 'react';
 import { heroContent } from '../constants/hero';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
   return (
     <div className="relative bg-white overflow-hidden w-full">
       <div className="w-full">
@@ -18,16 +20,22 @@ function Hero() {
               <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 {heroContent.buttons.map((button, index) => (
                   <div key={index} className={button.variant === 'primary' ? 'rounded-md shadow' : ''}>
-                    <a
-                      href={button.href}
-                      className={`w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 ${
-                        button.variant === 'primary'
-                          ? 'text-white bg-indigo-600 hover:bg-indigo-700'
-                          : 'text-indigo-700 bg-indigo-100 hover:bg-indigo-200'
-                      }`}
-                    >
-                      {button.text}
-                    </a>
+                    {button.text === 'Register a Patient' ? (
+                      <button
+                        type="button"
+                        onClick={() => navigate('/dashboard/register')}
+                        className={`w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 text-white bg-indigo-600 hover:bg-indigo-700`}
+                      >
+                        {button.text}
+                      </button>
+                    ) : (
+                      <a
+                        href={button.href}
+                        className={`w-full flex items-center justify-center px-6 sm:px-8 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 text-indigo-700 bg-indigo-100 hover:bg-indigo-200`}
+                      >
+                        {button.text}
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
