@@ -7,6 +7,7 @@ const Docs = React.lazy(() => import('../pages/Docs'));
 const DashboardLayout = React.lazy(() => import('../layout/DashboardLayout'));
 const RegisterPatient = React.lazy(() => import('../pages/dashboard/RegisterPatient'));
 const PatientRecords = React.lazy(() => import('../pages/dashboard/PatientRecords'));
+const SqlConsolePage = React.lazy(() => import('../pages/dashboard/SqlConsolePage'));
 
 export const routes = [
   {
@@ -41,5 +42,14 @@ export const routes = [
       </DashboardLayout>
     ),
     title: 'Patient Records'
+  },
+  {
+    path: '/dashboard/sql-console',
+    element: () => (
+      <DashboardLayout>
+        <SqlConsolePage />
+      </DashboardLayout>
+    ),
+    title: 'SQL Console'
   }
 ]; 
