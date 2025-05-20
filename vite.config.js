@@ -7,4 +7,21 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.cjs',
   },
+  worker: {
+    format: 'es',
+    plugins: []
+  },
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'pglite': ['@electric-sql/pglite']
+        }
+      }
+    }
+  },
+  optimizeDeps: {
+    exclude: ['@electric-sql/pglite']
+  }
 })
