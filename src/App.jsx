@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import AppLayout from './layout/AppLayout';
 import { routes } from './routes';
+import { DatabaseProvider } from './context/DatabaseContext';
 import './index.css';
 
 function AppRoutes() {
@@ -33,9 +34,11 @@ function AppRoutes() {
 
 function App() {
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    <DatabaseProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </DatabaseProvider>
   );
 }
 

@@ -6,6 +6,7 @@ const About = React.lazy(() => import('../pages/About'));
 const Docs = React.lazy(() => import('../pages/Docs'));
 const DashboardLayout = React.lazy(() => import('../layout/DashboardLayout'));
 const RegisterPatient = React.lazy(() => import('../pages/dashboard/RegisterPatient'));
+const PatientRecords = React.lazy(() => import('../pages/dashboard/PatientRecords'));
 
 export const routes = [
   {
@@ -31,5 +32,14 @@ export const routes = [
       </DashboardLayout>
     ),
     title: 'Register Patient'
+  },
+  {
+    path: '/dashboard/records',
+    element: () => (
+      <DashboardLayout>
+        <PatientRecords />
+      </DashboardLayout>
+    ),
+    title: 'Patient Records'
   }
 ]; 

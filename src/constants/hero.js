@@ -7,12 +7,12 @@ export const heroContent = {
   buttons: [
     {
       text: 'Register a Patient',
-      href: '#',
+      href: '/dashboard/register',
       variant: 'primary',
     },
     {
       text: 'View Records',
-      href: '#',
+      href: '/dashboard/records',
       variant: 'secondary',
     },
   ],
