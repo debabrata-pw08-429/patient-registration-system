@@ -63,6 +63,7 @@ export function useLiveQuery(query, params = [], key = 'id') {
   const { db } = useDatabase();
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!db) return;
@@ -71,16 +72,19 @@ export function useLiveQuery(query, params = [], key = 'id') {
 
     async function setupQuery() {
       try {
+        setIsLoading(true);
         subscription = await db.live.incrementalQuery(
           query,
           params,
           key,
           (results) => {
             setData(results.rows);
+            setIsLoading(false);
           }
         );
       } catch (err) {
         setError(err);
+        setIsLoading(false);
         console.error('Live query error:', err);
       }
     }
@@ -94,5 +98,5 @@ export function useLiveQuery(query, params = [], key = 'id') {
     };
   }, [db, query, JSON.stringify(params), key]);
 
-  return { data, error };
+  return { data, error, isLoading };
 } 

@@ -21,34 +21,31 @@ const DashboardLayout = ({ children }) => {
           isDesktopSidebarOpen ? 'w-64' : 'w-16'
         }`}
       >
-        <div className={`h-full transition-opacity duration-300 ${
-          isDesktopSidebarOpen ? 'opacity-100' : 'opacity-0'
-        }`}>
+        <div className="h-full relative">
           <Sidebar isCollapsed={!isDesktopSidebarOpen} />
+          {/* Desktop Toggle Button */}
+          <button
+            type="button"
+            className="absolute top-4 right-8 transform translate-x-1/2 z-50 flex items-center justify-center w-8 h-8 text-gray-500 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 bg-white rounded-md shadow-sm"
+            onClick={toggleDesktopSidebar}
+          >
+            <span className="sr-only">Toggle sidebar</span>
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isDesktopSidebarOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
+            </svg>
+          </button>
         </div>
       </div>
-
-      {/* Desktop Toggle Button */}
-      <button
-        type="button"
-        className="hidden md:flex fixed top-4 left-4 z-50 items-center justify-center w-8 h-8 text-gray-500 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 bg-white rounded-md shadow-sm"
-        onClick={toggleDesktopSidebar}
-      >
-        <span className="sr-only">Toggle sidebar</span>
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d={isDesktopSidebarOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-          />
-        </svg>
-      </button>
 
       {/* Mobile menu button */}
       <div className="md:hidden fixed top-4 right-4 z-50">
