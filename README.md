@@ -1,4 +1,4 @@
-# 📘 Project Overview
+## 📘 Project Overview
 
 This project is a lightweight web-based SQL playground built with PGlite, featuring persistent SQLite storage via IndexedDB, real-time cross-tab synchronization, and a modern UI with theme toggling support. The application is designed to let users experiment with raw SQL queries while managing and storing data directly in the browser.
 
@@ -31,7 +31,7 @@ This project is a lightweight web-based SQL playground built with PGlite, featur
 
 1. Clone the Repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/debabrata-pw08-429/patient-registration-system.git
 cd patient-registration-system
 ```
 
@@ -50,7 +50,7 @@ Navigate to: http://localhost:5173
 
 ## ⚙️ Assumptions
 
-- No authenticationa (focus is on core features)
+- No authentication (focus is on core requirements)
 - SQL Console and Patient Records are on separate pages
 - User's browser must support IndexedDB
 - User should be familiar with basic SQL
