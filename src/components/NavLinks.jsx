@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const navItems = [
   { name: 'About', path: '/about' },
   { name: 'Docs', path: '/docs' },
-  { name: 'GitHub', path: 'https://github.com/debabrata-pw08-429' }
+  { name: 'GitHub', path: 'https://github.com/debabrata-pw08-429/patient-registration-system' }
 ];
 
 function NavLinks({ className = '', isExternal = false }) {
