@@ -1,10 +1,4 @@
-# 🏥 Patient Records Manager
-
-"The Simplest Way to Register and Query Patient Records."
-
-A modern, fully client-side patient record system built with React, Tailwind CSS, and PGlite, supporting persistent storage, raw SQL query execution, and real-time syncing via PGliteWorker — all directly in your browser.
-
-## 📘 Project Overview
+# 📘 Project Overview
 
 This project is a lightweight web-based SQL playground built with PGlite, featuring persistent SQLite storage via IndexedDB, real-time cross-tab synchronization, and a modern UI with theme toggling support. The application is designed to let users experiment with raw SQL queries while managing and storing data directly in the browser.
 
